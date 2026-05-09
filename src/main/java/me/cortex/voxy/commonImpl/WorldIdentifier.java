@@ -147,7 +147,7 @@ public class WorldIdentifier {
     }
 
     public static String getWorldId(WorldIdentifier identifier) {
-        String data = identifier.biomeSeed + identifier.key.toString();
+        String data = identifier.biomeSeed + identifier.key.toString() + identifier.dimension.toString();
         try {
             return bytesToHex(MessageDigest.getInstance("SHA-256").digest(data.getBytes())).substring(0, 32);
         } catch (
